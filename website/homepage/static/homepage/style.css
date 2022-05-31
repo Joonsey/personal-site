@@ -5,11 +5,13 @@
 }
 
 h1 {
-    font-size: 140px
+    font-size: 140px;
+    margin-top: 200px;
 }
 
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: crimson;
