@@ -63,7 +63,7 @@ def get_os_dependant_dirs(system):
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates', # using jinja2 instead of django template
+        'BACKEND': 'django.template.backends.django.DjangoTemplates', 
         'DIRS': [get_os_dependant_dirs(os.system)],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -127,10 +127,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-
-STATIC_ROOT = '/home/jonsey/web-server/static/'
+if os.system == "linux":
+    STATIC_ROOT = '/home/jonsey/web-server/static/'
+else:
+    STATIC_ROOT = os.path.join(os.getcwd(), 'static')
 STATIC_URL = '/static/'
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
