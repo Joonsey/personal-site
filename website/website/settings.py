@@ -130,8 +130,9 @@ USE_TZ = True
 if os.system == "linux":
     STATIC_ROOT = '/home/jonsey/web-server/static/'
 else:
-    STATIC_ROOT = os.path.join(os.getcwd(), 'static')
+    STATIC_ROOT = os.path.join(os.getcwd(), 'static/')
 STATIC_URL = 'static/'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
