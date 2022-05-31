@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+import os
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,7 +27,7 @@ SECRET_KEY = 'django-insecure-)m0h3k-_&m138dsnp@u6ezj$cw^%t*nqx-tf@o78p73k)r=wsq
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["139.162.160.227"]
+ALLOWED_HOSTS = ["139.162.160.227", '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -37,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'homepage.apps.HomepageConfig'
 ]
 
 MIDDLEWARE = [
@@ -51,10 +54,17 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'website.urls'
 
+def get_os_dependant_dirs(system):
+    if system == 'linux':
+        return '/home/jonsey/web-server/templates/'
+    else:
+        return 'templates/'
+
+
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'BACKEND': 'django.template.backends.django.DjangoTemplates', # using jinja2 instead of django template
+        'DIRS': [get_os_dependant_dirs(os.system)],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
