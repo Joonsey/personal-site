@@ -128,10 +128,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 if os.system == "linux":
-    STATIC_ROOT = '/home/jonsey/web-server/static/'
+    STATIC_ROOT = '/home/jonsey/web-server/static-files/'
 else:
-    STATIC_ROOT = os.path.join(os.getcwd(), 'static/')
-STATIC_URL = 'static/'
+    STATIC_ROOT = os.path.join(os.getcwd(), 'static-files/')
+STATIC_URL = 'static-file/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
