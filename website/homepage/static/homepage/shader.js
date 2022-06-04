@@ -5,9 +5,11 @@ function scaleCanvas() {
     canvas.height = window.innerHeight;
 }
 
-window.onresize = scaleCanvas;
+//window.onresize = scaleCanvas;
 
-scaleCanvas()
+//scaleCanvas();
+canvas.width = 1920;
+canvas.height = 1000;
 
 const gl = canvas.getContext("webgl")
 const vertexData = [
@@ -101,7 +103,7 @@ gl.vertexAttribPointer(
 );
 
 // making the background color
-gl.clearColor(0.1, 0.1, 0.08, 1.0);
+gl.clearColor(0.05, 0.05, 0.08, 1.0);
 gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT)
 
 gl.useProgram(program);

@@ -20,6 +20,7 @@
 canvas {
     position:relative;
     z-index: -1;
+	overflow: hidden;
 }
 
 h1 {
@@ -34,6 +35,7 @@ h3 {
 }
 
 body {
+		overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
