@@ -12,9 +12,9 @@ scaleCanvas()
 const gl = canvas.getContext("webgl")
 const vertexData = [
 // X, Y, Z, R, G, B
-    0, 0.5, 0, 1, 1, 0,
-    0.5, -0.5, 0, 0.5, 0, 1,
-    -0.5, -0.5, 0, 0.2, 1, 0.5
+    0, 0.5, 0, 0.7, 0, 0,
+    0.5, -0.5, 0, 0, 0.6, 0,
+    -0.5, -0.5, 0, 0, 0, 0.8
 ];
 // making buffers
 // don't actually think this is needed
@@ -101,7 +101,7 @@ gl.vertexAttribPointer(
 );
 
 // making the background color
-gl.clearColor(0.75, 0.85, 0.8, 1.0);
+gl.clearColor(0.1, 0.1, 0.08, 1.0);
 gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT)
 
 gl.useProgram(program);

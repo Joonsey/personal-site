@@ -1,4 +1,9 @@
+:root {
+	--white-color: #ebf7dc;
+	
+}
 * {
+	font-family: 'Ubuntu', sans-serif;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -6,7 +11,7 @@
 
 .text-container {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -20,6 +25,12 @@ canvas {
 h1 {
     font-size: 140px;
     margin-top: 200px;
+	color: var(--white-color);
+}
+
+h3 {
+	color: var(--white-color);
+
 }
 
 body {
@@ -27,5 +38,21 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-   /* background-color: crimson; */
+}
+
+.bottom-text {
+	bottom: 100px;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+		
+}
+.bottom-text a {
+	margin: 15px;
+}
+svg{
+	fill: ivory;
+	width: 50px;
 }
